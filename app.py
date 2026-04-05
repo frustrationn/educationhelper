@@ -66,16 +66,25 @@ load_css()
 
 #probability
 def calculate_probability(student_score, passing_score, competition):
+    # Базовая вероятность
     if student_score >= passing_score:
-        margin = (student_score - passing_score) / passing_score
-        base_probability = min(0.7 + margin * 2, 0.98)
+        # Формула для превышения
+        base = 0.7 + 2 * (student_score - passing_score) / passing_score
+        base = min(base, 0.98)  # Не выше 98%
     else:
-        deficit = (passing_score - student_score) / passing_score
-        base_probability = max(0.05, 0.7 - deficit * 2.5)
+        # Формула для отставания
+        base = 0.7 + 2.5 * (student_score - passing_score) / passing_score
+        base = max(base, 0.05)  # Не ниже 5%
     
-    competition_factor = min(1.0, 3.0 / competition)
-    probability = base_probability * competition_factor
-    return round(probability * 100, 1)
+    # Учёт конкурса
+    if competition > 3:
+        competition_factor = 3.0 / competition
+    else:
+        competition_factor = 1.0
+    
+    probability = base * competition_factor * 100
+    return round(probability, 1)
+
 
 def get_region_options():
     return universities_df['region'].unique().tolist()
