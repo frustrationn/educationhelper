@@ -6,13 +6,13 @@ from datetime import datetime
 #loading
 @st.cache_data
 def load_universities_data():
-    return pd.read_csv(r'data\universities.csv')
+    return pd.read_csv('data/universities.csv')
 @st.cache_data
 def load_olympiad_bonuses():
-    return pd.read_csv(r'data\olympiad_bonuses.csv')
+    return pd.read_csv('data/olympiad_bonuses.csv')
 @st.cache_data
 def load_achievement_bonuses():
-    return pd.read_csv(r'data\achievement_bonuses.csv')
+    return pd.read_csv('data/achievement_bonuses.csv')
 universities_df = load_universities_data()
 olympiad_bonuses_df = load_olympiad_bonuses()
 achievement_bonuses_df = load_achievement_bonuses()
