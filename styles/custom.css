@@ -22,64 +22,64 @@ h3, .stMarkdown h3 {
     color: #2d3436;
 }
 [data-testid="stSidebar"] {
-    background-color: #f8f9fa !important;
+    background-color: #f8f9fa;
 }
 [data-testid="stSidebar"] * {
-    color: #2d3436 !important;
-    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif !important;
+    color: #2d3436;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 [data-testid="stMetricValue"] {
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
-    color: #1a1a2e !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a2e;
 }
 [data-testid="stMetricLabel"] {
-    font-size: 0.9rem !important;
-    font-weight: 400 !important;
-    color: #636e72 !important;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #636e72;
 }
 .stButton button {
-    font-weight: 500 !important;
-    background-color: #4CAF50 !important;
-    color: white !important;
-    border-radius: 8px !important;
-    border: none !important;
-    padding: 0.5rem 1rem !important;
+    font-weight: 500;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 0.5rem 1rem;
 }
 .stButton button:hover {
-    background-color: #45a049 !important;
+    background-color: #45a049;
 }
 .stProgress > div > div {
-    background-color: #4CAF50 !important;
-    border-radius: 10px !important;
+    background-color: #4CAF50;
+    border-radius: 10px;
 }
 .stDataFrame, .dataframe {
-    font-size: 0.9rem !important;
-    color: #1a1a2e !important;
+    font-size: 0.9rem;
+    color: #1a1a2e;
 }
 .stNumberInput input {
-    background-color: white !important;
-    color: #1a1a2e !important;
-    border-radius: 6px !important;
+    background-color: white;
+    color: #1a1a2e;
+    border-radius: 6px;
 }
 .stSelectbox select {
-    background-color: white !important;
-    color: #1a1a2e !important;
-    border-radius: 6px !important;
+    background-color: white;
+    color: #1a1a2e;
+    border-radius: 6px;
 }
 .stCheckbox label {
-    color: #2d3436 !important;
+    color: #2d3436;
 }
 .stAlert {
-    border-radius: 10px !important;
-    font-size: 0.95rem !important;
+    border-radius: 10px;
+    font-size: 0.95rem;
 }
 .footer-text {
-    font-size: 0.75rem !important;
-    color: #b2bec3 !important;
-    text-align: center !important;
+    font-size: 0.75rem;
+    color: #b2bec3;
+    text-align: cente;
     margin-top: 2rem;
 }
 .stInfo, .stSuccess, .stWarning, .stError {
-    font-size: 0.95rem !important;
+    font-size: 0.95rem;
 }
