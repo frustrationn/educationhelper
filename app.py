@@ -155,7 +155,7 @@ def find_alternatives(student_score, current_university, current_program, region
     return alternatives[:5]
 #interface
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
-st.title("Помощник в поступлении")
+st.title("📋Помощник в поступлении")
 st.markdown("---")
 with st.sidebar:
     st.header("Данные абитуриента✏️")
