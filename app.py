@@ -74,7 +74,7 @@ def calculate_probability(student_score, passing_score, competition):
         base = max(base, 0.05)
 
     if competition > 3:
-        competition_factor = 5.0 / competition
+        competition_factor = 7.0 / competition
     else:
         competition_factor = 1.0
     
