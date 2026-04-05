@@ -185,7 +185,7 @@ if selected_program:
             math_score, russian_score, informatics_score, gpa, olympiad, achievements
         )
         probability = calculate_probability(total_score, passing_score, competition)
-        st.header("📂Результат прогнозирования")
+        st.header("Результат прогнозирования")
         col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.metric("Общая сумма результатов ЕГЭ", bonuses_detail["ege_sum"])
