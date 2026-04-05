@@ -66,19 +66,15 @@ load_css()
 
 #probability
 def calculate_probability(student_score, passing_score, competition):
-    # Базовая вероятность
     if student_score >= passing_score:
-        # Формула для превышения
         base = 0.7 + 2 * (student_score - passing_score) / passing_score
-        base = min(base, 0.98)  # Не выше 98%
+        base = min(base, 0.98)
     else:
-        # Формула для отставания
         base = 0.7 + 2.5 * (student_score - passing_score) / passing_score
-        base = max(base, 0.05)  # Не ниже 5%
-    
-    # Учёт конкурса
+        base = max(base, 0.05)
+
     if competition > 3:
-        competition_factor = 3.0 / competition
+        competition_factor = 5.0 / competition
     else:
         competition_factor = 1.0
     
