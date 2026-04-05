@@ -62,7 +62,6 @@ def load_css():
     except FileNotFoundError:
         pass
 load_css()
-
 #probability
 def calculate_probability(student_score, passing_score, competition):
     if student_score >= passing_score:
@@ -71,29 +70,22 @@ def calculate_probability(student_score, passing_score, competition):
     else:
         base = 0.7 + 2.5 * (student_score - passing_score) / passing_score
         base = max(base, 0.05)
-
     if competition > 3:
         competition_factor = 9.0 / competition
     else:
         competition_factor = 1.0
-    
     probability = base * competition_factor * 100
     return round(probability, 1)
-
-
 def get_region_options():
     return universities_df['region'].unique().tolist()
-
 def get_universities_by_region(region):
     return universities_df[universities_df['region'] == region]['university'].unique().tolist()
-
 def get_programs_by_university(region, university):
     df_filtered = universities_df[
         (universities_df['region'] == region) & 
         (universities_df['university'] == university)
     ]
     return df_filtered['program'].unique().tolist()
-
 def get_university_data(region, university, program):
     df_filtered = universities_df[
         (universities_df['region'] == region) &
@@ -108,13 +100,11 @@ def get_university_data(region, university, program):
             "budget_places": row['budget_places']
         }
     return None
-
 def create_comparison_chart(student_score, passing_score, university, program):
     fig, ax = plt.subplots(figsize=(8, 3))
     categories = [f"{university}\n{program}", "Проходной балл"]
     values = [student_score, passing_score]
     colors = ["#4CAF50" if student_score >= passing_score else "#FF9800", "#2196F3"]
-    
     ax.bar(categories, values, color=colors, alpha=0.8)
     ax.set_ylabel("Баллы")
     ax.set_title("Сравнение ваших баллов с проходным баллом")
@@ -122,34 +112,28 @@ def create_comparison_chart(student_score, passing_score, university, program):
     ax.legend()
     plt.tight_layout()
     return fig
-
 def find_alternatives(student_score, current_university, current_program, region_filter=None):
     alternatives = []
     df = universities_df
     if region_filter:
         df = df[df['region'] == region_filter]
-    
     for _, row in df.iterrows():
         if row['university'] == current_university and row['program'] == current_program:
             continue
-        
         passing = row['passing_score']
-        
         if student_score >= passing:
             status = "✅ Хорошие шансы"
         elif student_score >= passing - 20:
             status = "⚠️Погранично"
         else:
             status = "‼️ Низкие шансы"
-        
         alternatives.append({
             "university": row['university'],
             "program": row['program'],
             "passing": passing,
             "difference": student_score - passing,
             "status": status
-        })
-    
+        }) 
     alternatives.sort(key=lambda x: x["difference"], reverse=True)
     return alternatives[:5]
 #interface
@@ -193,20 +177,15 @@ with st.sidebar:
     st.caption("Данные основаны на проходных баллах 2025 года")
 if selected_program:
     uni_data = get_university_data(selected_region, selected_university, selected_program)
-    
     if uni_data:
         passing_score = uni_data["passing"]
         competition = uni_data["competition"]
         budget_places = uni_data["budget_places"]
-        
         total_score, bonuses_detail = calculate_total_score(
             math_score, russian_score, informatics_score, gpa, olympiad, achievements
         )
-        
         probability = calculate_probability(total_score, passing_score, competition)
-        
         st.header("📂Результат прогнозирования")
-        
         col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.metric("Общая сумма результатов ЕГЭ", bonuses_detail["ege_sum"])
@@ -216,30 +195,23 @@ if selected_program:
             st.metric("Итоговый балл", total_score)
         with col4:
             st.metric("Проходной балл (2025)", passing_score, delta=f"{total_score - passing_score:+d}")
-        
         st.markdown("---")
         st.subheader(f"🎯 Вероятность поступления: {probability}%")
         st.progress(probability / 100)
-        
         if probability >= 70:
             st.success("✅**Высокая вероятность!** Смело подавайте документы в этот вуз.")
         elif probability >= 40:
             st.warning("✔️**Средняя вероятность.** Рекомендуем также рассмотреть альтернативы.")
         else:
             st.error("❌**Низкая вероятность.** Стоит серьезно поработать над баллами или выбрать другой вуз.")
-        
         st.caption(f"Конкурс: {competition} человек на место | Бюджетных мест: {budget_places}")
-        
         st.markdown("---")
         st.subheader("Визуализация")
         fig = create_comparison_chart(total_score, passing_score, selected_university, selected_program)
         st.pyplot(fig)
-        
         st.markdown("---")
         st.subheader("Альтернативные варианты")
-        
         alternatives = find_alternatives(total_score, selected_university, selected_program, selected_region)
-        
         if alternatives:
             alt_data = []
             for alt in alternatives[:5]:
@@ -254,7 +226,6 @@ if selected_program:
             st.dataframe(alt_df, width='stretch', hide_index=True)
         else:
             st.info("Альтернативные варианты не найдены. Возможно, стоит рассмотреть другие регионы.")
-        
         with st.expander("🔍 Детализация начисленных баллов"):
             col_a, col_b = st.columns(2)
             with col_a:
@@ -269,10 +240,8 @@ if selected_program:
                 st.write(f"- Олимпиады ({olympiad}): +{bonuses_detail['olympiad_bonus']}")
                 st.write(f"- Индивидуальные достижения: +{bonuses_detail['achievements_bonus']}")
                 st.write(f"**Всего доп. баллов:** {bonuses_detail['gpa_bonus'] + bonuses_detail['olympiad_bonus'] + bonuses_detail['achievements_bonus']}")
-        
         st.markdown("---")
         st.caption(f"Прогноз сгенерирован {datetime.now().strftime('%d.%m.%Y %H:%M')}")
         st.caption("Данные носят ознакомительный характер. Окончательное решение остается за приемной комиссией вуза")
 else:
     st.info("Выберите вуз и направление в боковой панели, чтобы начать")
-
