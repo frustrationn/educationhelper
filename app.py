@@ -157,53 +157,41 @@ def find_alternatives(student_score, current_university, current_program, region
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("Помощник в поступлении")
 st.markdown("---")
-
 with st.sidebar:
     st.header("Данные абитуриента✏️")
-    
     st.subheader("Результаты ЕГЭ")
     math_score = st.number_input("Математика (профиль)", 0, 100, 82)
     russian_score = st.number_input("Русский язык", 0, 100, 91)
     informatics_score = st.number_input("Информатика / Физика", 0, 100, 78)
-    
     st.subheader("Школьные достижения")
     gpa = st.number_input("Средний балл аттестата", 0.0, 5.0, 4.6, step=0.05)
-    
     olympiad = st.selectbox(
         "Олимпиады",
         ["Нет", "Региональный этап", "Перечневая (1-2 уровень)", "Всероссийский этап"]
     )
-    
     with st.expander("Индивидуальные достижения"):
         gold_gto = st.checkbox("Золотой значок ГТО")
         volunteer_hours = st.selectbox("Волонтерские часы", [0, 50, 100, 150, 200])
         final_essay = st.checkbox("Итоговое сочинение (зачет)")
         gold_medal = st.checkbox("Золотая медаль🥇")
-        silver_medal = st.checkbox("Серебряная медаль🥈")
-    
+        silver_medal = st.checkbox("Серебряная медаль🥈")  
     achievements = {
         "gold_gto": gold_gto,
         "volunteer_hours": volunteer_hours,
         "final_essay": final_essay,
         "gold_medal": gold_medal,
         "silver_medal": silver_medal
-    }
-    
+    } 
     st.markdown("---")
     st.header("🎓Выбор вуза")
-    
     regions = get_region_options()
     selected_region = st.selectbox("Регион", regions)
-    
     universities = get_universities_by_region(selected_region)
     selected_university = st.selectbox("Вуз", universities)
-    
     programs = get_programs_by_university(selected_region, selected_university)
-    selected_program = st.selectbox("Направление", programs)
-    
+    selected_program = st.selectbox("Направление", programs)    
     st.markdown("---")
     st.caption("Данные основаны на проходных баллах 2025 года")
-
 if selected_program:
     uni_data = get_university_data(selected_region, selected_university, selected_program)
     
