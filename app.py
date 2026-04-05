@@ -53,17 +53,15 @@ def calculate_total_score(math, russian, informatics, gpa, olympiad_level, achie
         "olympiad_bonus": olympiad_bonus,
         "achievements_bonus": achievements_bonus
     }
-
-
-
+# Загрузка CSS
 def load_css():
     css_path = os.path.join('styles', 'custom.css')
     try:
         with open(css_path, 'r', encoding='utf-8') as f:
-            css = f.read()
-        st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     except FileNotFoundError:
         pass
+
 load_css()
 
 #probability
