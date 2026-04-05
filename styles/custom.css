@@ -1,96 +1,85 @@
 .stApp {
-    font-family:'Bahnschrift Semibold Condensed', sans-serif;
+    background-color: #ffffff;
 }
-
-/* Заголовок страницы */
-h1 {
+html, body, [class*="css"], .stApp, div, p, span, label, .stMarkdown {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #1a1a2e;
+}
+h1, .stMarkdown h1 {
     font-size: 2.2rem;
     font-weight: 600;
     color: #1a1a2e;
     margin-bottom: 1rem;
 }
-
-/* Подзаголовки h2 */
-h2 {
+h2, .stMarkdown h2 {
     font-size: 1.5rem;
     font-weight: 500;
     color: #2d3436;
 }
-
-/* Подзаголовки h3 */
-h3 {
+h3, .stMarkdown h3 {
     font-size: 1.2rem;
     font-weight: 500;
     color: #2d3436;
 }
-
-/* Боковая панель */
 [data-testid="stSidebar"] {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa !important;
 }
-
-[data-testid="stSidebar"] h1,
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #2d3436;
+[data-testid="stSidebar"] * {
+    color: #2d3436 !important;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif !important;
 }
-
-/* Метрики (большие цифры) */
 [data-testid="stMetricValue"] {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a1a2e;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #1a1a2e !important;
 }
-
-/* Подписи к метрикам */
 [data-testid="stMetricLabel"] {
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: #636e72;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+    color: #636e72 !important;
 }
-
-/* Кнопки */
 .stButton button {
-    font-weight: 500;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 8px;
-    border: none;
-    padding: 0.5rem 1rem;
+    font-weight: 500 !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
 }
-
 .stButton button:hover {
-    background-color: #45a049;
+    background-color: #45a049 !important;
 }
-
-/* Сообщения (success, warning, error, info) */
-.stAlert {
-    border-radius: 10px;
-    font-size: 0.95rem;
-}
-
-/* Прогресс-бар */
 .stProgress > div > div {
-    background-color: #4CAF50;
-    border-radius: 10px;
+    background-color: #4CAF50 !important;
+    border-radius: 10px !important;
 }
-
-/* Таблица с альтернативами */
-.stDataFrame {
-    font-size: 0.9rem;
+.stDataFrame, .dataframe {
+    font-size: 0.9rem !important;
+    color: #1a1a2e !important;
 }
-
-/* Текст в информационных блоках */
-.stInfo, .stSuccess, .stWarning, .stError {
-    font-size: 0.95rem;
+.stNumberInput input {
+    background-color: white !important;
+    color: #1a1a2e !important;
+    border-radius: 6px !important;
 }
-
-/* Кастомный класс для футера */
+.stSelectbox select {
+    background-color: white !important;
+    color: #1a1a2e !important;
+    border-radius: 6px !important;
+}
+.stCheckbox label {
+    color: #2d3436 !important;
+}
+.stAlert {
+    border-radius: 10px !important;
+    font-size: 0.95rem !important;
+}
 .footer-text {
-    font-size: 0.75rem;
-    color: #b2bec3;
-    text-align: center;
+    font-size: 0.75rem !important;
+    color: #b2bec3 !important;
+    text-align: center !important;
     margin-top: 2rem;
+}
+.stInfo, .stSuccess, .stWarning, .stError {
+    font-size: 0.95rem !important;
 }
