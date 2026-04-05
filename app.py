@@ -56,16 +56,16 @@ def calculate_total_score(math, russian, informatics, gpa, olympiad_level, achie
 
 
 
-
 def load_css():
+    css_path = os.path.join('styles', 'custom.css')
     try:
-        with open('styles/custom.css', 'r', encoding='utf-8') as f:
+        with open(css_path, 'r', encoding='utf-8') as f:
             css = f.read()
         st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
     except FileNotFoundError:
-        # Если файл не найден, просто продолжаем работу
         pass
 load_css()
+
 #probability
 def calculate_probability(student_score, passing_score, competition):
     if student_score >= passing_score:
