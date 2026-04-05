@@ -1,0 +1,96 @@
+.stApp {
+    font-family:'Bahnschrift Semibold Condensed', sans-serif;
+}
+
+/* Заголовок страницы */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+}
+
+/* Подзаголовки h2 */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #2d3436;
+}
+
+/* Подзаголовки h3 */
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2d3436;
+}
+
+/* Боковая панель */
+[data-testid="stSidebar"] {
+    background-color: #f8f9fa;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2d3436;
+}
+
+/* Метрики (большие цифры) */
+[data-testid="stMetricValue"] {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+/* Подписи к метрикам */
+[data-testid="stMetricLabel"] {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #636e72;
+}
+
+/* Кнопки */
+.stButton button {
+    font-weight: 500;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.stButton button:hover {
+    background-color: #45a049;
+}
+
+/* Сообщения (success, warning, error, info) */
+.stAlert {
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+/* Прогресс-бар */
+.stProgress > div > div {
+    background-color: #4CAF50;
+    border-radius: 10px;
+}
+
+/* Таблица с альтернативами */
+.stDataFrame {
+    font-size: 0.9rem;
+}
+
+/* Текст в информационных блоках */
+.stInfo, .stSuccess, .stWarning, .stError {
+    font-size: 0.95rem;
+}
+
+/* Кастомный класс для футера */
+.footer-text {
+    font-size: 0.75rem;
+    color: #b2bec3;
+    text-align: center;
+    margin-top: 2rem;
+}
