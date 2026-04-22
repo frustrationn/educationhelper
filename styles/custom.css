@@ -1,3 +1,9 @@
+[theme]
+base = "light"
+primaryColor = "#4CAF50"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F8F9FA"
+textColor = "#1A1A2E"
 .stApp {
     background-color: #ffffff !important;
 }
