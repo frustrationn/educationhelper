@@ -138,10 +138,10 @@ def find_alternatives(student_score, current_university, current_program, region
     return alternatives[:5]
 #interface
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
-st.title("📋Помощник в поступлении")
+st.title("Помощник в поступлении")
 st.markdown("---")
 with st.sidebar:
-    st.header("Данные абитуриента✏️")
+    st.header("Данные абитуриента")
     st.subheader("Результаты ЕГЭ")
     math_score = st.number_input("Математика (профиль)", 0, 100, 82)
     russian_score = st.number_input("Русский язык", 0, 100, 91)
@@ -166,7 +166,7 @@ with st.sidebar:
         "silver_medal": silver_medal
     } 
     st.markdown("---")
-    st.header("🎓Выбор вуза")
+    st.header("Выбор вуза")
     regions = get_region_options()
     selected_region = st.selectbox("Регион", regions)
     universities = get_universities_by_region(selected_region)
