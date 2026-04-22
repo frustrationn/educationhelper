@@ -159,7 +159,7 @@ st.markdown("""
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
-with st.sidebar():
+with st.sidebar:
     st.header("Данные абитуриента✏️")
     st.subheader("Результаты ЕГЭ")
     math_score = st.number_input("Математика (профиль)", 0, 100, 82)
