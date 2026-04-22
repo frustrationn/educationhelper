@@ -139,24 +139,20 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 st.markdown("""
 <style>
-[data-testid="stSidebarCollapseButton"] svg,
-button[data-testid="baseButton-header"] svg,
-button[kind="icon"] svg {
+/* Скрываем стандартную иконку Material Icons */
+[data-testid="stIconMaterial"] {
     display: none !important;
 }
 
-[data-testid="stSidebarCollapseButton"] button span span::before {
+/* Добавляем свою стрелку на кнопку сворачивания боковой панели */
+[data-testid="stSidebarCollapseButton"] button::before {
     content: "◀";
     font-size: 14px;
     color: #666;
-    display: inline-block;
 }
 
-.stSidebar--collapsed [data-testid="stSidebarCollapseButton"] button span span::before {
-    content: "▶";
-}
-
-[data-testid="stSidebarCollapsed"] [data-testid="stSidebarCollapseButton"] button span span::before {
+/* Когда панель свёрнута — стрелка смотрит вправо */
+.stSidebar--collapsed [data-testid="stSidebarCollapseButton"] button::before {
     content: "▶";
 }
 </style>
