@@ -139,29 +139,30 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 st.markdown("""
 <style>
-/* Скрываем обе иконки Material Icons */
-[data-testid="stIconMaterial"] {
+/* 1. Полностью скрываем старую иконку Material Icons */
+[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"] {
     display: none !important;
 }
 
-/* Добавляем свою стрелку на кнопку */
-[data-testid="stSidebarCollapseButton"] button {
-    position: relative;
+/* 2. Очищаем содержимое кнопки от всего лишнего */
+[data-testid="stSidebarCollapseButton"] button span {
+    display: none !important;
 }
 
-/* Стрелка когда панель ОТКРЫТА (было keyboard_double_arrow_left) */
+/* 3. Добавляем новую иконку ◀ (когда панель открыта) */
 [data-testid="stSidebarCollapseButton"] button::before {
     content: "◀";
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
-/* Стрелка когда панель СВЁРНУТА (было keyboard_double_arrow_right) */
-[data-testid="stSidebarCollapsed"] [data-testid="stSidebarCollapseButton"] button::before {
+/* 4. Меняем иконку на ▶ (когда панель свёрнута) */
+.stSidebar--collapsed [data-testid="stSidebarCollapseButton"] button::before {
     content: "▶";
 }
 </style>
