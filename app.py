@@ -177,7 +177,9 @@ st.markdown("""
     color: #666;
     float: right;
 }
-
+.stSidebar--collapsed [data-testid="stSidebarCollapseButton"] button::before {
+    content: "▶";
+}
 .stSelectbox button svg {
     display: none !important;
 }
