@@ -137,36 +137,6 @@ def find_alternatives(student_score, current_university, current_program, region
     alternatives.sort(key=lambda x: x["difference"], reverse=True)
     return alternatives[:5]
 #interface
-st.markdown("""
-<style>
-/* 1. Полностью скрываем старую иконку Material Icons */
-[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"] {
-    display: none !important;
-}
-
-/* 2. Очищаем содержимое кнопки от всего лишнего */
-[data-testid="stSidebarCollapseButton"] button span {
-    display: none !important;
-}
-
-/* 3. Добавляем новую иконку ◀ (когда панель открыта) */
-[data-testid="stSidebarCollapseButton"] button::before {
-    content: "«";
-    font-size: 35px;
-    color: #666;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-/* 4. Меняем иконку на ▶ (когда панель свёрнута) */
-.stSidebar--collapsed [data-testid="stSidebarCollapseButton"] button::before {
-    content: "▶";
-}
-</style>
-""", unsafe_allow_html=True)
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
