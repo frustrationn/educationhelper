@@ -139,20 +139,29 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 st.markdown("""
 <style>
-/* Скрываем стандартную иконку Material Icons */
+/* Скрываем обе иконки Material Icons */
 [data-testid="stIconMaterial"] {
     display: none !important;
 }
 
-/* Добавляем свою стрелку на кнопку сворачивания боковой панели */
+/* Добавляем свою стрелку на кнопку */
+[data-testid="stSidebarCollapseButton"] button {
+    position: relative;
+}
+
+/* Стрелка когда панель ОТКРЫТА (было keyboard_double_arrow_left) */
 [data-testid="stSidebarCollapseButton"] button::before {
     content: "◀";
     font-size: 14px;
     color: #666;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* Когда панель свёрнута — стрелка смотрит вправо */
-.stSidebar--collapsed [data-testid="stSidebarCollapseButton"] button::before {
+/* Стрелка когда панель СВЁРНУТА (было keyboard_double_arrow_right) */
+[data-testid="stSidebarCollapsed"] [data-testid="stSidebarCollapseButton"] button::before {
     content: "▶";
 }
 </style>
