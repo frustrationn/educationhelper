@@ -177,7 +177,17 @@ st.markdown("""
     color: #666;
     float: right;
 }
-.stSidebar--collapsed [data-testid="stSidebarCollapseButton"] button::before {
+button[kind="icon"] svg {
+    display: none !important;
+}
+
+button[kind="icon"]::before {
+    content: "◀";
+    font-size: 14px;
+    color: #666;
+}
+
+.stSidebar--collapsed button[kind="icon"]::before {
     content: "▶";
 }
 .stSelectbox button svg {
@@ -192,7 +202,6 @@ st.markdown("""
     display: inline-block;
 }
 
-/* Боковая панель */
 [data-testid="stSidebar"] .stSelectbox button svg {
     display: none !important;
 }
