@@ -139,7 +139,7 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 import streamlit as st
 
-st.markdown(
+st.markdown('''
 <style>
 [data-testid="stExpander"] summary svg,
 [data-testid="stSidebarCollapseButton"] svg,
@@ -184,7 +184,7 @@ button[data-testid="baseButton-header"] svg,
 [data-testid="stExpander"] summary::-webkit-details-marker {
     display: none;
 }
-</style>, unsafe_allow_html=True)
+</style>''', unsafe_allow_html=True)
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
