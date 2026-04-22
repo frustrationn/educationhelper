@@ -151,7 +151,7 @@ st.markdown("""
 
 /* 3. Добавляем новую иконку ◀ (когда панель открыта) */
 [data-testid="stSidebarCollapseButton"] button::before {
-    content: "◀";
+    content: "«";
     font-size: 16px;
     color: #666;
     display: flex;
