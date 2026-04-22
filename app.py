@@ -142,22 +142,13 @@ st.markdown(
     button[data-testid="baseButton-header"] svg {
         display: none !important;
     }
-        content: "▶️"
-        margin-right: 8px;
-        font-size: 16px;
-        transition: transform 0.2s ease;
-        display: inline-block;
-    }
-    button[data-testid="baseButton-header"][aria-expanded="true"]::before {
-        transform: rotate(90deg);
-    }
     </style>,
     unsafe_allow_html=True,
 )
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
-with st.sidebar:
+with st.sidebar('abc'):
     st.header("Данные абитуриента✏️")
     st.subheader("Результаты ЕГЭ")
     math_score = st.number_input("Математика (профиль)", 0, 100, 82)
