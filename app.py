@@ -139,9 +139,10 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 st.markdown("""
 <style>
-[data-testid="stExpander"] summary svg {
+[data-testid="stIconMaterial"] {
     display: none !important;
 }
+
 [data-testid="stExpander"]:not([open]) summary::after {
     content: "▼";
     font-size: 12px;
@@ -149,7 +150,6 @@ st.markdown("""
     color: #666;
     float: right;
 }
-
 [data-testid="stExpander"][open] summary::after {
     content: "▲";
     font-size: 12px;
