@@ -137,25 +137,54 @@ def find_alternatives(student_score, current_university, current_program, region
     alternatives.sort(key=lambda x: x["difference"], reverse=True)
     return alternatives[:5]
 #interface
-st.markdown("""
+import streamlit as st
+
+st.markdown(
 <style>
-[data-testid="stexpander"] summary svg {
+[data-testid="stExpander"] summary svg,
+[data-testid="stSidebarCollapseButton"] svg,
+button[data-testid="baseButton-header"] svg,
+.stSelectbox button svg {
     display: none !important;
 }
-[data-testid="stexpander" and 'stsidebar']:not([open]) summary::after {
+[data-testid="stExpander"] summary {
+    position: relative;
+}
+
+[data-testid="stExpander"]:not([open]) summary::after {
     content: "▼";
     font-size: 12px;
-    margin-left: 8px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #666;
 }
 [data-testid="stExpander"][open] summary::after {
     content: "▲";
     font-size: 12px;
-    margin-left: 8px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #666;
 }
-</style>
-""", unsafe_allow_html=True)
+[data-testid="stSidebarCollapseButton"] button::before {
+    content: "◀";
+    font-size: 14px;
+    color: #666;
+}
+.stSelectbox button::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 8px;
+    color: #666;
+    display: inline-block;
+}
+[data-testid="stExpander"] summary::-webkit-details-marker {
+    display: none;
+}
+</style>, unsafe_allow_html=True)
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
