@@ -137,6 +137,13 @@ def find_alternatives(student_score, current_university, current_program, region
     alternatives.sort(key=lambda x: x["difference"], reverse=True)
     return alternatives[:5]
 #interface
+st.markdown("""
+<style>
+[data-testid="stIconMaterial"] {
+    display: none !important;
+}
+</style>
+""", unsafe_allow_html=True)#add
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
