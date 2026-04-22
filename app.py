@@ -144,9 +144,6 @@ button[data-testid="baseButton-header"] svg,
 button[kind="icon"] svg {
     display: none !important;
 }
-[data-testid="stIconMaterial"] {
-    display: none !important;
-}
 
 [data-testid="stSidebarCollapseButton"] button span span::before {
     content: "◀";
