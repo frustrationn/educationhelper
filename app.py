@@ -142,13 +142,13 @@ st.markdown("""
 [data-testid="stIconMaterial"] {
     display: none !important;
 }
-[data-testid="stExpander"]:not([open]) summary::after {
+[data-testid="stIconMaterial"]:not([open]) summary::after {
     content: "▼";
     font-size: 12px;
     margin-left: 8px;
     color: #666;
 }
-[data-testid="stExpander"][open] summary::after {
+[data-testid="stIconMaterial"][open] summary::after {
     content: "▲";
     font-size: 12px;
     margin-left: 8px;
