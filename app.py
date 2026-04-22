@@ -139,7 +139,7 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 st.markdown("""
 <style>
-[data-testid="stExpander"] summary svg {
+[data-testid="stIconMaterial"] {
     display: none !important;
 }
 [data-testid="stExpander"]:not([open]) summary::after {
@@ -155,7 +155,9 @@ st.markdown("""
     color: #666;
 }
 </style>
-""", unsafe_allow_html=True)#add
+""", unsafe_allow_html=True)
+
+#add
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
