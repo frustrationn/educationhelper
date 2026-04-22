@@ -2,7 +2,6 @@
     background-color: #ffffff;
 }
 html, body, [class*="css"], .stApp, div, p, span, label, .stMarkdown {
-    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
     color: #1a1a2e;
 }
 h1, .stMarkdown h1 {
@@ -26,7 +25,6 @@ h3, .stMarkdown h3 {
 }
 [data-testid="stSidebar"] * {
     color: #2d3436;
-    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 [data-testid="stMetricValue"] {
     font-size: 1.8rem;
