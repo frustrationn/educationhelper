@@ -137,14 +137,25 @@ def find_alternatives(student_score, current_university, current_program, region
     alternatives.sort(key=lambda x: x["difference"], reverse=True)
     return alternatives[:5]
 #interface
-st.markdown(
-    <style>
-    button[data-testid="baseButton-header"] svg {
-        display: none !important;
-    }
-    </style>,
-    unsafe_allow_html=True,
-)
+st.markdown("""
+<style>
+[data-testid="stexpander"] summary svg {
+    display: none !important;
+}
+[data-testid="stexpander" and 'stsidebar']:not([open]) summary::after {
+    content: "▼";
+    font-size: 12px;
+    margin-left: 8px;
+    color: #666;
+}
+[data-testid="stExpander"][open] summary::after {
+    content: "▲";
+    font-size: 12px;
+    margin-left: 8px;
+    color: #666;
+}
+</style>
+""", unsafe_allow_html=True)
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
