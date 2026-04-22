@@ -137,7 +137,23 @@ def find_alternatives(student_score, current_university, current_program, region
     alternatives.sort(key=lambda x: x["difference"], reverse=True)
     return alternatives[:5]
 #interface
-
+st.markdown(
+    <style>
+    button[data-testid="baseButton-header"] svg {
+        display: none !important;
+    }
+        content: "▶️";  /* ← ВСТАВЬТЕ СЮДА ЛЮБОЙ СИМВОЛ ИЛИ ЭМОДЗИ */
+        margin-right: 8px;
+        font-size: 16px;
+        transition: transform 0.2s ease;
+        display: inline-block;
+    }
+    button[data-testid="baseButton-header"][aria-expanded="true"]::before {
+        transform: rotate(90deg);
+    }
+    </style>,
+    unsafe_allow_html=True,
+)
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
@@ -153,7 +169,7 @@ with st.sidebar:
         "Олимпиады",
         ["Нет", "Региональный этап", "Перечневая (1-2 уровень)", "Всероссийский этап"]
     )
-    with st.expander("Индивидуальные достижения", icon="icon_path_to_icon"):
+    with st.expander("Индивидуальные достижения"):
         gold_gto = st.checkbox("Золотой значок ГТО")
         volunteer_hours = st.selectbox("Волонтерские часы", [0, 50, 100, 150, 200])
         final_essay = st.checkbox("Итоговое сочинение (зачет)")
