@@ -150,6 +150,9 @@ button[data-testid="baseButton-header"] svg,
 [data-testid="stExpander"] summary {
     position: relative;
 }
+[data-testid="stIconMaterial"] {
+    display: none !important;
+}
 
 [data-testid="stExpander"]:not([open]) summary::after {
     content: "▼";
