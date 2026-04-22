@@ -142,22 +142,8 @@ st.markdown("""
 [data-testid="stIconMaterial"] {
     display: none !important;
 }
-[data-testid="stIconMaterial"]:not([open]) summary::after {
-    content: "▼";
-    font-size: 12px;
-    margin-left: 8px;
-    color: #666;
-}
-[data-testid="stIconMaterial"][open] summary::after {
-    content: "▲";
-    font-size: 12px;
-    margin-left: 8px;
-    color: #666;
-}
 </style>
 """, unsafe_allow_html=True)
-
-#add
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
