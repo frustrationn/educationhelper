@@ -153,7 +153,7 @@ with st.sidebar:
         "Олимпиады",
         ["Нет", "Региональный этап", "Перечневая (1-2 уровень)", "Всероссийский этап"]
     )
-    with st.expander("Индивидуальные достижения"):
+    with st.expander("Индивидуальные достижения", icon="icon_path_to_icon"):
         gold_gto = st.checkbox("Золотой значок ГТО")
         volunteer_hours = st.selectbox("Волонтерские часы", [0, 50, 100, 150, 200])
         final_essay = st.checkbox("Итоговое сочинение (зачет)")
