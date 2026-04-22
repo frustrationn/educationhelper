@@ -142,7 +142,7 @@ st.markdown(
     button[data-testid="baseButton-header"] svg {
         display: none !important;
     }
-        content: "▶️";  /* ← ВСТАВЬТЕ СЮДА ЛЮБОЙ СИМВОЛ ИЛИ ЭМОДЗИ */
+        content: "▶️"
         margin-right: 8px;
         font-size: 16px;
         transition: transform 0.2s ease;
