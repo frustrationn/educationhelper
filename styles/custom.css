@@ -1,90 +1,121 @@
-.stapp {
-    background-color: #ffffff;
+.stApp {
+    background-color: #ffffff !important;
 }
+
 html, body, [class*="css"], .stApp, div, p, span, label, .stMarkdown {
-    color: #1a1a2e;
+    color: #1a1a2e !important;
 }
+
 h1, .stMarkdown h1 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #1a1a2e;
-    margin-bottom: 1rem;
+    font-size: 2.2rem !important;
+    font-weight: 600 !important;
+    color: #1a1a2e !important;
+    margin-bottom: 1rem !important;
 }
+
 h2, .stMarkdown h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #2d3436;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: #2d3436 !important;
 }
+
 h3, .stMarkdown h3 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #2d3436;
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    color: #2d3436 !important;
 }
+
 [data-testid="stSidebar"] {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa !important;
 }
+
 [data-testid="stSidebar"] * {
-    color: #2d3436;
+    color: #2d3436 !important;
 }
+
 [data-testid="stMetricValue"] {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a1a2e;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #1a1a2e !important;
 }
+
 [data-testid="stMetricLabel"] {
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: #636e72;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+    color: #636e72 !important;
 }
+
 .stSelectbox [data-baseweb="select"] {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
 }
+
 .stSelectbox [data-baseweb="select"] div {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
 }
+
+div[data-baseweb="select"] ul {
+    background-color: #ffffff !important;
+}
+
+div[data-baseweb="select"] li {
+    color: #1a1a2e !important;
+}
+
 .stButton button {
-    font-weight: 500;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 8px;
-    border: none;
-    padding: 0.5rem 1rem;
+    font-weight: 500 !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
 }
+
 .stButton button:hover {
-    background-color: #45a049;
+    background-color: #45a049 !important;
 }
+
 .stProgress > div > div {
-    background-color: #4CAF50;
-    border-radius: 10px;
+    background-color: #4CAF50 !important;
+    border-radius: 10px !important;
 }
+
 .stDataFrame, .dataframe {
-    font-size: 0.9rem;
-    color: #1a1a2e;
+    font-size: 0.9rem !important;
+    color: #1a1a2e !important;
 }
+
 .stNumberInput input {
-    background-color: #ffffff;
-    color: #1a1a2e;
-    border-radius: 6px;
+    background-color: #ffffff !important;
+    color: #1a1a2e !important;
+    border-radius: 6px !important;
+    border: 1px solid #e0e0e0 !important;
 }
+
 .stSelectbox select {
-    background-color: #ffffff;
-    color: #1a1a2e;
-    border-radius: 6px;
+    background-color: #ffffff !important;
+    color: #1a1a2e !important;
+    border-radius: 6px !important;
+    border: 1px solid #e0e0e0 !important;
 }
+
 .stCheckbox label {
-    color: #2d3436;
+    color: #2d3436 !important;
 }
+
 .stAlert {
-    border-radius: 10px;
-    font-size: 0.95rem;
+    border-radius: 10px !important;
+    font-size: 0.95rem !important;
+    background-color: #f8f9fa !important;
 }
+
 .footer-text {
-    font-size: 0.75rem;
-    color: #b2bec3;
-    text-align: cente;
-    margin-top: 2rem;
+    font-size: 0.75rem !important;
+    color: #b2bec3 !important;
+    text-align: center !important;
+    margin-top: 2rem !important;
 }
+
 .stInfo, .stSuccess, .stWarning, .stError {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
 }
