@@ -137,57 +137,57 @@ def find_alternatives(student_score, current_university, current_program, region
     alternatives.sort(key=lambda x: x["difference"], reverse=True)
     return alternatives[:5]
 #interface
-import streamlit as st
-
-st.markdown('''
+st.markdown("""
 <style>
+/* Скрываем стандартные стрелки везде */
 [data-testid="stExpander"] summary svg,
-[data-testid="stSidebarCollapseButton"] svg,
-button[data-testid="baseButton-header"] svg,
-.stSelectbox button svg {
-    display: none !important;
-}
-[data-testid="stExpander"] summary {
-    position: relative;
-}
-[data-testid="stIconMaterial"] {
+[data-testid="stSidebar"] [data-testid="stExpander"] summary svg,
+.stSelectbox button svg,
+[data-testid="stSidebar"] .stSelectbox button svg {
     display: none !important;
 }
 
+/* Свои стрелки для expander (основная панель) */
 [data-testid="stExpander"]:not([open]) summary::after {
     content: "▼";
-    font-size: 12px;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 8px;
     color: #666;
+    float: right;
 }
+
 [data-testid="stExpander"][open] summary::after {
     content: "▲";
-    font-size: 12px;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 8px;
     color: #666;
+    float: right;
 }
-[data-testid="stSidebarCollapseButton"] button::before {
-    content: "◀";
-    font-size: 14px;
+
+/* Свои стрелки для expander (боковая панель) */
+[data-testid="stSidebar"] [data-testid="stExpander"]:not([open]) summary::after {
+    content: "▼";
+    margin-left: 8px;
     color: #666;
+    float: right;
 }
-.stSelectbox button::after {
+
+[data-testid="stSidebar"] [data-testid="stExpander"][open] summary::after {
+    content: "▲";
+    margin-left: 8px;
+    color: #666;
+    float: right;
+}
+
+/* Стрелки для selectbox везде */
+.stSelectbox button::after,
+[data-testid="stSidebar"] .stSelectbox button::after {
     content: "▼";
     font-size: 10px;
     margin-left: 8px;
     color: #666;
     display: inline-block;
 }
-[data-testid="stExpander"] summary::-webkit-details-marker {
-    display: none;
-}
-</style>''', unsafe_allow_html=True)
+</style>
+""", unsafe_allow_html=True)
 st.set_page_config(page_title="Помощник в поступлении", page_icon="📋", layout="wide")
 st.title("📋Помощник в поступлении")
 st.markdown("---")
