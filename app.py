@@ -139,89 +139,23 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 st.markdown("""
 <style>
-[data-testid="stIconMaterial"] {
-    display: none !important;
-}
-
-[data-testid="stExpander"]:not([open]) summary::after {
-    content: "▼";
-    font-size: 12px;
-    margin-left: 8px;
-    color: #666;
-    float: right;
-}
-[data-testid="stExpander"][open] summary::after {
-    content: "▲";
-    font-size: 12px;
-    margin-left: 8px;
-    color: #666;
-    float: right;
-}
-
-[data-testid="stSidebar"] [data-testid="stExpander"] summary svg {
-    display: none !important;
-}
-
-[data-testid="stSidebar"] [data-testid="stExpander"]:not([open]) summary::after {
-    content: "▼";
-    font-size: 12px;
-    margin-left: 8px;
-    color: #666;
-    float: right;
-}
-
-[data-testid="stSidebar"] [data-testid="stExpander"][open] summary::after {
-    content: "▲";
-    font-size: 12px;
-    margin-left: 8px;
-    color: #666;
-    float: right;
-}
-button[kind="icon"] svg {
-    display: none !important;
-}
-
-button[kind="icon"]::before {
-    content: "◀";
-    font-size: 14px;
-    color: #666;
-}
-
-.stSidebar--collapsed button[kind="icon"]::before {
-    content: "▶";
-}
-.stSelectbox button svg {
-    display: none !important;
-}
-
-.stSelectbox button::after {
-    content: "▼";
-    font-size: 10px;
-    margin-left: 8px;
-    color: #666;
-    display: inline-block;
-}
-
-[data-testid="stSidebar"] .stSelectbox button svg {
-    display: none !important;
-}
-
-[data-testid="stSidebar"] .stSelectbox button::after {
-    content: "▼";
-    font-size: 10px;
-    margin-left: 8px;
-    color: #666;
-    display: inline-block;
-}
-
+/* Скрываем стандартные иконки */
 [data-testid="stSidebarCollapseButton"] svg {
     display: none !important;
 }
 
+/* Всегда показываем ◀, а поворот будет через transform */
 [data-testid="stSidebarCollapseButton"] button::before {
     content: "◀";
     font-size: 14px;
     color: #666;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Когда панель свёрнута — поворачиваем стрелку */
+[data-testid="stSidebarCollapsed"] [data-testid="stSidebarCollapseButton"] button::before {
+    transform: rotate(180deg);
 }
 </style>
 """, unsafe_allow_html=True)
