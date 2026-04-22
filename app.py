@@ -139,17 +139,12 @@ def find_alternatives(student_score, current_university, current_program, region
 #interface
 st.markdown("""
 <style>
-/* Скрываем стандартные стрелки везде */
-[data-testid="stExpander"] summary svg,
-[data-testid="stSidebar"] [data-testid="stExpander"] summary svg,
-.stSelectbox button svg,
-[data-testid="stSidebar"] .stSelectbox button svg {
+[data-testid="stExpander"] summary svg {
     display: none !important;
 }
-
-/* Свои стрелки для expander (основная панель) */
 [data-testid="stExpander"]:not([open]) summary::after {
     content: "▼";
+    font-size: 12px;
     margin-left: 8px;
     color: #666;
     float: right;
@@ -157,14 +152,19 @@ st.markdown("""
 
 [data-testid="stExpander"][open] summary::after {
     content: "▲";
+    font-size: 12px;
     margin-left: 8px;
     color: #666;
     float: right;
 }
 
-/* Свои стрелки для expander (боковая панель) */
+[data-testid="stSidebar"] [data-testid="stExpander"] summary svg {
+    display: none !important;
+}
+
 [data-testid="stSidebar"] [data-testid="stExpander"]:not([open]) summary::after {
     content: "▼";
+    font-size: 12px;
     margin-left: 8px;
     color: #666;
     float: right;
@@ -172,19 +172,45 @@ st.markdown("""
 
 [data-testid="stSidebar"] [data-testid="stExpander"][open] summary::after {
     content: "▲";
+    font-size: 12px;
     margin-left: 8px;
     color: #666;
     float: right;
 }
 
-/* Стрелки для selectbox везде */
-.stSelectbox button::after,
+.stSelectbox button svg {
+    display: none !important;
+}
+
+.stSelectbox button::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 8px;
+    color: #666;
+    display: inline-block;
+}
+
+/* Боковая панель */
+[data-testid="stSidebar"] .stSelectbox button svg {
+    display: none !important;
+}
+
 [data-testid="stSidebar"] .stSelectbox button::after {
     content: "▼";
     font-size: 10px;
     margin-left: 8px;
     color: #666;
     display: inline-block;
+}
+
+[data-testid="stSidebarCollapseButton"] svg {
+    display: none !important;
+}
+
+[data-testid="stSidebarCollapseButton"] button::before {
+    content: "◀";
+    font-size: 14px;
+    color: #666;
 }
 </style>
 """, unsafe_allow_html=True)
